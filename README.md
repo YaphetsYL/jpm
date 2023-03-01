@@ -9,13 +9,13 @@
 7. all arguments do not contain space & escape character
 8. use Exit to quit the system
 
-### Command Tips:
-####View 
+### Command Tips
+#### View 
 1. if the *Show Number* is less than 1, it will list all shows
 2. if the *Show Number* is valid, it will display the ticket details and seat availability.
 
-####Book
+#### Book
 1. user can rebook if s/he cancelled the ticket of the show
 
-####Exit
+#### Exit
 exit the program
