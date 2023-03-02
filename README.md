@@ -8,7 +8,6 @@
 6. *Phone#*: normal String,
 7. All arguments do not contain space & escape character
 8. Use "Exit" to quit the system
-9. The use of System.out is preferred for outputting to console, rather than log.info or log.error.
 
 ### Command Details
 
