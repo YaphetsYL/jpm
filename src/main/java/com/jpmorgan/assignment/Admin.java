@@ -70,7 +70,8 @@ public class Admin {
 
         Show show = new Show(showNumber, numRows, numSeatsPerRow, cancellationWindow);
         showMap.put(showNumber, show);
-        System.out.println(SHOW_NUMBER + showNumber + " has been set up with " + numRows + " rows and " + numSeatsPerRow + " seats per row.");
+        System.out.println(SHOW_NUMBER + showNumber + " has been set up with " + numRows + " rows and "
+                + numSeatsPerRow + " seats per row.");
     }
 
 
@@ -108,8 +109,8 @@ public class Admin {
                 System.out.println("\tNo ticket has been sold");
             } else {
                 for (Ticket ticket : show.getTicketMap().values()) {
-                    System.out.println("\tTicket: " + ticket.getTicketNumber() + ", Buyer Phone: " + ticket.getPhone() +
-                            ", Seat Number(s): " + ticket.getSeatNumbersFormatted());
+                    System.out.println("\tTicket: " + ticket.getTicketNumber() + ", Buyer Phone: " + ticket.getPhone()
+                            + ", Seat Number(s): " + ticket.getSeatNumbersFormatted());
                 }
             }
 

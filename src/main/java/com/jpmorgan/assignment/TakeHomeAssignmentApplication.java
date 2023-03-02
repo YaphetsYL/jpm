@@ -21,10 +21,10 @@ public class TakeHomeAssignmentApplication {
             System.out.println();
             System.out.println("Enter a command:");
             String input = scanner.nextLine();
-            String[] tokens = input.trim().split(" ");
-            String command = tokens[0];
 
             try {
+                String[] tokens = input.trim().split(" ");
+                String command = tokens[0];
                 switch (command) {
                     case "Setup":
                         setup(tokens);
@@ -60,7 +60,7 @@ public class TakeHomeAssignmentApplication {
                         break;
                 }
             } catch (Exception e) {
-                System.out.println("Error: " + e.getMessage());
+                System.err.println("Error: " + e.getMessage());
             }
         }
     }
@@ -77,8 +77,8 @@ public class TakeHomeAssignmentApplication {
             String phone = tokens[2];
             buyer.cancelBooking(ticketNumber, phone, admin, LocalDateTime.now());
         } catch (NumberFormatException e) {
-            System.out.println(INVALID_INPUT_TRY_AGAIN);
-            System.out.println("Hint: Cancel <Ticket#> <Phone#>");
+            System.err.println(INVALID_INPUT_TRY_AGAIN);
+            System.err.println("Hint: Cancel <Ticket#> <Phone#>");
         }
     }
 
@@ -96,8 +96,8 @@ public class TakeHomeAssignmentApplication {
             String[] seats = tokens[3].split(",");
             buyer.bookTickets(showNumber, phone, seats, admin, LocalDateTime.now());
         } catch (NumberFormatException e) {
-            System.out.println(INVALID_INPUT_TRY_AGAIN);
-            System.out.println("Hint: Book <Show Number> <Phone#> <Comma separated list of seats>");
+            System.err.println(INVALID_INPUT_TRY_AGAIN);
+            System.err.println("Hint: Book <Show Number> <Phone#> <Comma separated list of seats>");
         }
     }
 
@@ -112,8 +112,8 @@ public class TakeHomeAssignmentApplication {
             int showNumber = Integer.parseInt(tokens[1]);
             buyer.showAvailableSeats(showNumber, admin);
         } catch (NumberFormatException e) {
-            System.out.println(INVALID_INPUT_TRY_AGAIN);
-            System.out.println("Hint: Availability <Show Number>");
+            System.err.println(INVALID_INPUT_TRY_AGAIN);
+            System.err.println("Hint: Availability <Show Number>");
         }
     }
 
@@ -134,12 +134,12 @@ public class TakeHomeAssignmentApplication {
             admin.setupShow(showNumber, numRows, numSeatsPerRow, cancellationWindowInMinutes);
             System.out.println("Show " + showNumber + " setup complete.");
         } catch (NumberFormatException e) {
-            System.out.println(INVALID_INPUT_TRY_AGAIN);
-            System.out.println("Hint: Setup <Show Number> <Number of Rows> <Number of seats per row> <Cancellation window in minutes>");
-            System.out.println("<Show Number> only accepts positive integers");
-            System.out.println("<Number of Rows> 1 - 26, integer only");
-            System.out.println("<Number of seats per row> 1 - 10, integer only");
-            System.out.println("<Cancellation window in minutes> only accepts positive integers");
+            System.err.println(INVALID_INPUT_TRY_AGAIN);
+            System.err.println("Hint: Setup <Show Number> <Number of Rows> <Number of seats per row> <Cancellation window in minutes>");
+            System.err.println("<Show Number> only accepts positive integers");
+            System.err.println("<Number of Rows> 1 - 26, integer only");
+            System.err.println("<Number of seats per row> 1 - 10, integer only");
+            System.err.println("<Cancellation window in minutes> only accepts positive integers");
         }
     }
 
@@ -154,10 +154,10 @@ public class TakeHomeAssignmentApplication {
             int showNumber = Integer.parseInt(tokens[1]);
             admin.viewShows(showNumber);
         } catch (NumberFormatException e) {
-            System.out.println(INVALID_INPUT_TRY_AGAIN);
-            System.out.println("Hint: View <Show Number>");
-            System.out.println("<Show Number> only accepts integers");
-            System.out.println("if <Show Number> is less than 1, then it will list all shows");
+            System.err.println(INVALID_INPUT_TRY_AGAIN);
+            System.err.println("Hint: View <Show Number>");
+            System.err.println("<Show Number> only accepts integers");
+            System.err.println("if <Show Number> is less than 1, then it will list all shows");
         }
     }
 
